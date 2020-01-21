@@ -8,7 +8,8 @@ collection = db['individualUser']
 
 def find():
     record_list = []
-    records = collection.find({})
+    records = collection.find({}).sort("timestamp") #sorting to be fixed
     for record in records:
         record_list.append(record)
+    # print(record_list)
     return record_list
